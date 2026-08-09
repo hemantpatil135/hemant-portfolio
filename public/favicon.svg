@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="ring" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FDBA74"/>
+      <stop offset="55%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep-space plate. Solid rather than the logo's translucent fill: a favicon
+       has no page behind it, and the dark ground keeps the ring and monogram
+       legible on light and dark browser chrome alike, so no media query is needed. -->
+  <circle cx="24" cy="24" r="20.6" fill="#0C0A09"/>
+  <circle cx="24" cy="24" r="20.6" fill="none" stroke="url(#ring)" stroke-width="2.4"/>
+  <circle cx="24" cy="24" r="15.5" fill="none" stroke="#FB923C" stroke-width="0.8" opacity="0.2"/>
+
+  <!-- "HP" drawn as paths, not text: SVG favicons render outside the page's font
+       context, so a font-family here is a silent-fallback risk. -->
+  <g fill="#F8F4EF">
+    <rect x="12.7" y="17" width="3.4" height="14" rx="0.5"/>
+    <rect x="21.3" y="17" width="3.4" height="14" rx="0.5"/>
+    <rect x="16.1" y="22.3" width="5.2" height="3.4"/>
+  </g>
+  <g fill="#FB923C">
+    <rect x="27.7" y="17" width="3.4" height="14" rx="0.5"/>
+    <path d="M31.1 17 A4.5 4.5 0 0 1 31.1 26 Z"/>
+  </g>
+  <!-- The bowl's counter, punched in the plate colour so the P doesn't read as a D -->
+  <path d="M31.1 19.4 A2.1 2.1 0 0 1 31.1 23.6 Z" fill="#0C0A09"/>
+</svg>

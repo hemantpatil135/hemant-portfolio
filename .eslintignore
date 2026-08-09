@@ -1,0 +1,6 @@
+# Build output — git-ignores these, but ESLint doesn't read .gitignore, so
+# `npm run lint` was reporting hundreds of warnings from minified bundles
+# after any `npm run build`.
+.next/
+.next-prod/
+out/

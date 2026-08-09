@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Theme engine — "Lunar Deep Space".
+ * Core surfaces/text are driven by CSS variables so BOTH dark and light
+ * themes stay readable. RGB-channel vars let Tailwind opacity modifiers
+ * (e.g. bg-deep/70) keep working.
+ */
+:root,
+:root.dark {
+  --font-inter: "Inter", system-ui, sans-serif;
+  --font-geist: "Geist", var(--font-inter);
+  --font-geist-mono: "Geist Mono", ui-monospace, monospace;
+  color-scheme: dark;
+
+  --bg-rgb: 12 10 9; /* #0C0A09 warm near-black */
+  --surface-rgb: 24 20 17; /* #181411 */
+  --ink-rgb: 245 240 235; /* #F5F0EB warm white */
+  --muted-rgb: 168 158 148; /* #A89E94 warm gray */
+
+  --card: rgba(255, 255, 255, 0.038);
+  --card-2: rgba(255, 255, 255, 0.02);
+  --card-strong: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --hover: rgba(255, 255, 255, 0.05);
+  --hover-strong: rgba(255, 255, 255, 0.1);
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-strong: rgba(255, 255, 255, 0.07);
+}
+
+:root.light {
+  color-scheme: light;
+
+  --bg-rgb: 250 247 242; /* #FAF7F2 warm off-white */
+  --surface-rgb: 255 255 255;
+  --ink-rgb: 28 25 23; /* #1C1917 warm stone */
+  --muted-rgb: 120 113 108; /* #78716C warm gray */
+
+  --card: rgba(255, 255, 255, 0.72);
+  --card-2: rgba(255, 255, 255, 0.55);
+  --card-strong: rgba(255, 255, 255, 0.9);
+  --border: rgba(28, 25, 23, 0.1);
+  --border-strong: rgba(28, 25, 23, 0.18);
+  --hover: rgba(28, 25, 23, 0.05);
+  --hover-strong: rgba(28, 25, 23, 0.09);
+  --glass: rgba(255, 255, 255, 0.62);
+  --glass-strong: rgba(255, 255, 255, 0.78);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Ultrawide/TV: scale the rem base so type, spacing and rem max-widths all
+     grow together instead of leaving a 1280px column on a 4K panel. */
+  @media (min-width: 2560px) {
+    html {
+      font-size: 18px;
+    }
+  }
+  @media (min-width: 3400px) {
+    html {
+      font-size: 21px;
+    }
+  }
+
+  /* Lenis handles scroll; disable native smooth to avoid double easing. */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    background-color: rgb(var(--bg-rgb));
+    color: rgb(var(--ink-rgb));
+    @apply font-sans antialiased;
+    overflow-x: hidden;
+    transition:
+      background-color 0.4s ease,
+      color 0.4s ease;
+  }
+
+  ::selection {
+    background: rgba(249, 115, 22, 0.28);
+    color: #fff7ed;
+  }
+
+  /* Hide native scrollbar — custom orange progress bar replaces it */
+  html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  html::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+  }
+
+  :focus-visible {
+    outline: 2px solid #f97316;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Camera-shake transform target — kept GPU-composited and cheap. */
+  main {
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+}
+
+@layer components {
+  .glass {
+    border: 1px solid var(--border);
+    background: var(--glass);
+    @apply backdrop-blur-xl;
+  }
+  .glass-strong {
+    border: 1px solid var(--border);
+    background: var(--glass-strong);
+    @apply backdrop-blur-2xl;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-accent to-purple bg-clip-text text-transparent;
+  }
+  .text-gradient-accent {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  /* max-w is in rem, so it grows with the root-size bump on TVs below. */
+  .section-shell {
+    @apply relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12 2xl:max-w-[88rem] 3xl:max-w-[96rem] 3xl:px-16;
+  }
+  .eyebrow {
+    border: 1px solid var(--border);
+    background: var(--card);
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-accent;
+  }
+  /* Billboarded planet label in the tech-stack orbit. Opacity is driven per
+     frame by the declutter pass in StackOrbit, so none is set here. */
+  .orbit-chip {
+    color: var(--chip);
+    background: rgba(10, 7, 5, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: opacity 180ms ease;
+    @apply inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-2 py-0.5 text-[11px] font-semibold backdrop-blur-sm;
+  }
+  .orbit-chip[data-active="true"] {
+    border-color: var(--chip);
+    box-shadow: 0 0 18px -4px var(--chip);
+  }
+}
+
+@layer utilities {
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+  .perspective {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Deep-space starfield — layered pin-point stars, GPU-cheap. */
+  .starfield {
+    background-image:
+      radial-gradient(
+        1px 1px at 20% 30%,
+        rgba(255, 255, 255, 0.7),
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at 70% 20%,
+        rgba(255, 255, 255, 0.5),
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at 40% 70%,
+        rgba(255, 255, 255, 0.6),
+        transparent
+      ),
+      radial-gradient(
+        1.5px 1.5px at 85% 60%,
+        rgba(253, 186, 116, 0.7),
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at 15% 85%,
+        rgba(255, 255, 255, 0.5),
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at 55% 45%,
+        rgba(255, 255, 255, 0.45),
+        transparent
+      ),
+      radial-gradient(
+        1.5px 1.5px at 90% 15%,
+        rgba(251, 146, 60, 0.6),
+        transparent
+      ),
+      radial-gradient(1px 1px at 30% 55%, rgba(255, 255, 255, 0.4), transparent);
+    background-repeat: repeat;
+    background-size: 480px 480px;
+  }
+  :root.light .starfield {
+    opacity: 0.25;
+  }
+}
+
+/* Respect reduced motion globally. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hide default cursor only on devices with a fine pointer (custom cursor active). */
+@media (pointer: fine) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none;
+  }
+  /* …except where the native cursor carries meaning the orb can't: the I-beam
+     is the only cue that text is selectable/editable. CustomCursor hides itself
+     over these so the two never draw at once. */
+  .custom-cursor-active input,
+  .custom-cursor-active textarea,
+  .custom-cursor-active [contenteditable="true"] {
+    cursor: auto;
+  }
+}
