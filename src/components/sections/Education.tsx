@@ -423,19 +423,6 @@ export function Education() {
               </div>
             </Reveal>
           </div>
-
-          {/* ── Full width: languages ── */}
-          <Reveal
-            delay={2}
-            className="rounded-3xl border border-[var(--border)] bg-[var(--card)] p-6 backdrop-blur-xl sm:p-7"
-          >
-            <PanelTitle icon={Globe}>Languages</PanelTitle>
-            <div className="mt-5 grid grid-cols-1 gap-3 min-[380px]:grid-cols-2 sm:grid-cols-4 lg:grid-cols-6">
-              {languages.map((lang) => (
-                <LangBadge key={lang.name} lang={lang} />
-              ))}
-            </div>
-          </Reveal>
         </div>
       </div>
     </section>
