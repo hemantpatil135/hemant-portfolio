@@ -10,7 +10,7 @@ export function Projects() {
   const [selected, setSelected] = useState(0);
 
   return (
-    <section id="projects" className="relative py-28 sm:py-36">
+    <section id="projects" className="relative py-20 sm:py-24">
       <div className="section-shell">
         <MissionHeader />
 

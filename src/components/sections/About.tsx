@@ -74,7 +74,7 @@ export function About() {
   const scrollTo = useSmoothScroll();
 
   return (
-    <section id="about" className="relative py-24 sm:py-32">
+    <section id="about" className="relative py-20 sm:py-24">
       <div className="section-shell">
         <div className="grid gap-10 lg:grid-cols-[0.82fr_1.5fr] lg:gap-12">
           {/* ─────────────── LEFT: identity + character ─────────────── */}

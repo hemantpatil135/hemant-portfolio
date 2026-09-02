@@ -121,7 +121,7 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="text-muted transition hover:text-accent"
+            className="-m-2.5 p-2.5 text-muted transition hover:text-accent"
           >
             <Github className="h-5 w-5" />
           </a>
@@ -130,7 +130,7 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-muted transition hover:text-accent"
+            className="-m-2.5 p-2.5 text-muted transition hover:text-accent"
           >
             <Linkedin className="h-5 w-5" />
           </a>

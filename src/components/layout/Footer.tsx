@@ -58,7 +58,7 @@ export function Footer() {
                     e.preventDefault();
                     scrollTo(item.href, -80);
                   }}
-                  className="text-muted transition hover:text-ink"
+                  className="-my-1 inline-block py-1 text-muted transition hover:text-ink"
                 >
                   {item.label}
                 </a>
@@ -71,7 +71,7 @@ export function Footer() {
           <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted">Connect</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href={profile.links.email} className="group inline-flex items-center gap-1 text-muted transition hover:text-ink">
+              <a href={profile.links.email} className="group -my-1 inline-flex items-center gap-1 py-1 text-muted transition hover:text-ink">
                 {profile.email}
                 <ArrowUpRight className="h-3 w-3 opacity-0 transition group-hover:opacity-100" />
               </a>

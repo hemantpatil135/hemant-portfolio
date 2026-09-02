@@ -256,7 +256,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative overflow-hidden py-28 sm:py-36">
+    <section id="contact" className="relative overflow-hidden py-20 sm:py-24">
       <div className="section-shell">
         {/* ── Header ── */}
         <div className="mx-auto max-w-2xl text-center">
@@ -295,7 +295,7 @@ export function Contact() {
                 <span className="block text-sm font-bold text-ink">
                   {profile.name}
                 </span>
-                <span className="block truncate text-xs text-muted">
+                <span className="block text-xs text-muted sm:truncate">
                   {profile.role} · LinkedIn
                 </span>
               </span>
@@ -323,7 +323,7 @@ export function Contact() {
                 <span className="block text-sm font-bold text-ink">
                   Chat on WhatsApp
                 </span>
-                <span className="block truncate text-xs text-muted">
+                <span className="block text-xs text-muted sm:truncate">
                   Usually replies quickly
                 </span>
               </span>
@@ -345,7 +345,7 @@ export function Contact() {
                       <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted">
                         {label}
                       </p>
-                      <p className="truncate text-sm font-semibold text-ink">
+                      <p className="break-all text-sm font-semibold text-ink sm:truncate sm:break-normal">
                         {value}
                       </p>
                       <p className="text-xs text-muted">{sub}</p>

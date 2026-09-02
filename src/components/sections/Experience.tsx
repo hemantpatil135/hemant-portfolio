@@ -247,7 +247,7 @@ export function Experience() {
   }, [measure, open]);
 
   return (
-    <section id="experience" className="relative py-28 sm:py-36">
+    <section id="experience" className="relative py-20 sm:py-24">
       <div className="section-shell">
         <SectionHeading
           eyebrow="Experience"
@@ -408,7 +408,7 @@ export function Experience() {
                           {role.metrics && (
                             // 2×2 from lg: a single row leaves this column much
                             // shorter than the responsibilities beside it.
-                            <div className="mt-auto grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2">
+                            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2">
                               {role.metrics.map((m) => (
                                 <MetricTile key={m.label} metric={m} />
                               ))}
@@ -538,7 +538,9 @@ export function Experience() {
                       </div>
 
                       {role.metrics && (
-                        <div className="grid grid-cols-3 gap-2.5 self-start">
+                        // 3-up only from sm: at 320–375 three columns leave each tile
+                        // ~64px wide, wrapping the labels into a narrow stack.
+                        <div className="grid grid-cols-2 gap-2.5 self-start sm:grid-cols-3">
                           {role.metrics.map((m) => (
                             <MetricTile key={m.label} metric={m} compact />
                           ))}
@@ -555,7 +557,7 @@ export function Experience() {
                           // Only while open: the panel unmounts when collapsed, and
                           // aria-controls must not point at a missing id.
                           aria-controls={isOpen ? panelId : undefined}
-                          className="mt-5 flex items-center gap-1.5 rounded-full text-xs font-semibold text-muted transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                          className="-mb-2 mt-3 flex items-center gap-1.5 rounded-full py-2 text-xs font-semibold text-muted transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
                         >
                           <ChevronDown
                             className={cn("h-4 w-4 transition-transform", isOpen && "rotate-180")}

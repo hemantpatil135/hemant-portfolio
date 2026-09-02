@@ -365,7 +365,7 @@ function AchievementRow({ ach, index }: { ach: Achievement; index: number }) {
 
 export function Education() {
   return (
-    <section id="education" className="relative overflow-hidden py-28 sm:py-36">
+    <section id="education" className="relative overflow-hidden py-20 sm:py-24">
       <div className="section-shell">
         <SectionHeading
           eyebrow="Education & Recognition"

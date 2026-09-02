@@ -141,6 +141,28 @@ export function TechIcon({
           <path d="M10 15c0 1 .6 1.5 1.7 1.5 1.2 0 1.8-.6 1.8-1.6 0-1-.6-1.4-2-1.7-1.2-.3-1.6-.6-1.6-1.3 0-.8.6-1.3 1.7-1.3.9 0 1.5.3 1.7 1" strokeLinecap="round" />
         </svg>
       );
+    case "angular":
+      return (
+        <svg {...common} stroke="currentColor" strokeWidth={1.5}>
+          <path d="M12 2.5l8.5 3-1.3 11.2L12 21.5l-7.2-4.8L3.5 5.5l8.5-3z" strokeLinejoin="round" />
+          <path d="M9 15l3-7.5 3 7.5M10.1 12.6h3.8" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+    case "mysql":
+      return (
+        <svg {...common} stroke="currentColor" strokeWidth={1.5}>
+          <ellipse cx="12" cy="6" rx="7" ry="3" />
+          <path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6" strokeLinecap="round" />
+          <path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3" strokeLinecap="round" />
+        </svg>
+      );
+    case "mongodb":
+      return (
+        <svg {...common} stroke="currentColor" strokeWidth={1.5}>
+          <path d="M12 2.5c3.5 4 5.5 7 5.5 10.2 0 3.4-2.4 6-5.5 7.3-3.1-1.3-5.5-3.9-5.5-7.3C6.5 9.5 8.5 6.5 12 2.5z" strokeLinejoin="round" />
+          <path d="M12 6v15.5" strokeLinecap="round" />
+        </svg>
+      );
     default:
       return (
         <svg {...common} stroke="currentColor" strokeWidth={1.5}>

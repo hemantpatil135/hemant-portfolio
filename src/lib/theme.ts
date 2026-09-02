@@ -39,7 +39,7 @@ export const siteConfig = {
   name: "Hemant Patil",
   title: "Hemant Patil — Software Engineer",
   description:
-    "Premium interactive portfolio of Hemant Patil, a Frontend Software Engineer with 4.5+ years building scalable enterprise React & TypeScript applications for clients like American Express, Pearson, and Axis Bank.",
+    "Premium interactive portfolio of Hemant Patil, a Frontend Software Engineer with 4.9+ years building scalable enterprise React & TypeScript applications for clients like American Express, Pearson, and Axis Bank.",
   url: siteUrl,
   keywords: [
     "Hemant Patil",

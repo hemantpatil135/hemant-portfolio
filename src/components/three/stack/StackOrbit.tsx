@@ -12,7 +12,7 @@ import { usePrefersReducedMotion } from "@/hooks/useMediaQuery";
 /**
  * React is the sun: `orbitRadius: 0` and `planetType: "sun"` in the data. The
  * remaining tools orbit it in three lanes banded from the `orbitRadius`
- * progression (a single 0→33 sequence) so fourteen of them never crowd one ring.
+ * progression (a single 0→33 sequence) so seventeen of them never crowd one ring.
  */
 const SUN: StackTool =
   orbitTools.find((tool) => tool.planetType === "sun") ?? orbitTools[0];

@@ -149,7 +149,7 @@ export function TechStack() {
   }, []);
 
   return (
-    <section id="stack" className="relative py-24 sm:py-32 overflow-hidden">
+    <section id="stack" className="relative py-20 sm:py-24 overflow-hidden">
       {/* Background starfield */}
       <div
         aria-hidden

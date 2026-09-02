@@ -23,6 +23,9 @@ export type IconName =
   | "git"
   | "api"
   | "node"
+  | "angular"
+  | "mysql"
+  | "mongodb"
   | "framer"
   | "gsap"
   | "vite";
@@ -58,8 +61,8 @@ export const profile: Profile = {
   email: "patilhemantsing@gmail.com",
   phone: "+91 9157094137",
   summary:
-    "Frontend Software Engineer with 4.5+ years of experience architecting and building scalable, high-performance enterprise web applications using React.js, TypeScript, and modern state management patterns. Proven track record designing reusable component architecture, optimizing frontend performance, and integrating complex REST APIs across multi-role platforms for enterprise and international clients.",
-  yearsExperience: "4.5+",
+    "Frontend Software Engineer with 4.9+ years of experience architecting and building scalable, high-performance enterprise web applications using React.js, TypeScript, and modern state management patterns. Proven track record designing reusable component architecture, optimizing frontend performance, and integrating complex REST APIs across multi-role platforms for enterprise and international clients.",
+  yearsExperience: "4.9+",
   links: {
     linkedin: "https://linkedin.com/in/hemantpatil333",
     github: "https://github.com/hemantpatil135",
@@ -92,7 +95,7 @@ export const about = {
   story:
     "I turn complex enterprise UI problems into clean, accessible, high-performance React — work I've shipped for global clients like American Express, Pearson, and Axis Bank.",
   bio: [
-    "I'm a Frontend Software Engineer based in Surat, India, with 4.5+ years building enterprise-grade React applications for international clients including American Express, Pearson, and Axis Bank.",
+    "I'm a Frontend Software Engineer based in Surat, India, with 4.9+ years building enterprise-grade React applications for international clients including American Express, Pearson, and Axis Bank.",
     "My focus is reusable component architecture, frontend performance optimization, and integrating complex REST APIs across multi-role platforms. I thrive in Agile/Scrum teams, collaborating closely with backend, QA, and product.",
     "I care deeply about clean, maintainable, and accessible code — and about mentoring the engineers around me. I was promoted from Developer to Team Leader within two years.",
   ],
@@ -104,7 +107,7 @@ export const about = {
   ],
   facts: [
     { label: "Based in", value: "Surat, India" },
-    { label: "Experience", value: "4.5+ years" },
+    { label: "Experience", value: "4.9+ years" },
     { label: "Enterprise clients", value: "10+ international" },
     { label: "Languages", value: "English · Hindi · Marathi · Gujarati" },
   ] as AboutFact[],
@@ -123,7 +126,7 @@ export interface AboutHighlight {
 export const aboutHighlights: AboutHighlight[] = [
   {
     icon: "rocket",
-    value: "4.5+",
+    value: "4.9+",
     title: "Years of Experience",
     sub: "Building production frontends",
   },
@@ -175,7 +178,7 @@ export const journey: JourneyMilestone[] = [
     year: "2025+",
     role: "Frontend Engineer",
     org: "Interstride",
-    blurb: "Architecting scalable multi-role student & admin platforms.",
+    blurb: "Architecting 4 role-based portals across 7 user roles.",
   },
 ];
 
@@ -490,6 +493,102 @@ export const orbitTools: StackTool[] = [
     orbitInclination: -0.05,
     planetSize: 1.1,
   },
+  {
+    id: "node",
+    name: "Node.js",
+    icon: "node",
+    role: "Backend & APIs",
+    color: "#539E43",
+    level: 72,
+    description: "Server-side JavaScript for API and tooling work.",
+    uses: ["REST Endpoints", "API Integration", "Build Tooling", "npm Ecosystem"],
+    usedIn: [{ title: "API Integration", icon: "Network" }],
+    planetType: "rocky",
+    orbitRadius: 7,
+    orbitSpeed: 0.9,
+    orbitInclination: 0.12,
+    planetSize: 1.0,
+  },
+  {
+    id: "angular",
+    name: "Angular.js",
+    icon: "angular",
+    role: "Framework",
+    color: "#DD0031",
+    level: 68,
+    description: "Maintaining and extending Angular client applications.",
+    uses: ["Components", "Services & DI", "Routing", "Forms"],
+    usedIn: [{ title: "Client Projects", icon: "FolderGit2" }],
+    planetType: "volcanic",
+    orbitRadius: 4,
+    orbitSpeed: 1.1,
+    orbitInclination: -0.12,
+    planetSize: 0.9,
+  },
+  {
+    id: "sass",
+    name: "SASS",
+    icon: "sass",
+    role: "Styling",
+    color: "#CC6699",
+    level: 85,
+    description: "Structured, maintainable stylesheets at scale.",
+    uses: ["Variables & Mixins", "Nesting", "Partials", "Theming"],
+    usedIn: [{ title: "Design Systems", icon: "Palette" }],
+    planetType: "gas",
+    orbitRadius: 12,
+    orbitSpeed: 0.45,
+    orbitInclination: 0.18,
+    planetSize: 1.0,
+  },
+  {
+    id: "bootstrap",
+    name: "Bootstrap",
+    icon: "bootstrap",
+    role: "UI Library",
+    color: "#7952B3",
+    level: 85,
+    description: "Rapid responsive layouts on a proven grid.",
+    uses: ["Grid System", "Responsive Utilities", "Components", "Theming"],
+    usedIn: [{ title: "Client Projects", icon: "FolderGit2" }],
+    planetType: "metallic",
+    orbitRadius: 15,
+    orbitSpeed: 0.38,
+    orbitInclination: -0.15,
+    planetSize: 1.1,
+  },
+  {
+    id: "mysql",
+    name: "MySQL",
+    icon: "mysql",
+    role: "Database",
+    color: "#00758F",
+    level: 65,
+    description: "Relational data modelling and querying.",
+    uses: ["Schema Design", "Joins & Queries", "Indexing", "Data Modeling"],
+    usedIn: [{ title: "Client Projects", icon: "FolderGit2" }],
+    planetType: "ice",
+    orbitRadius: 29,
+    orbitSpeed: 0.13,
+    orbitInclination: 0.22,
+    planetSize: 0.9,
+  },
+  {
+    id: "mongodb",
+    name: "MongoDB",
+    icon: "mongodb",
+    role: "Database",
+    color: "#47A248",
+    level: 65,
+    description: "Document storage for flexible, evolving data.",
+    uses: ["Collections", "Aggregation", "Schema Flexibility", "Indexing"],
+    usedIn: [{ title: "Client Projects", icon: "FolderGit2" }],
+    planetType: "digital",
+    orbitRadius: 31,
+    orbitSpeed: 0.11,
+    orbitInclination: -0.22,
+    planetSize: 1.0,
+  },
 ];
 
 /** Left-column value props for the stack section. */
@@ -586,24 +685,26 @@ export const experiences: Experience[] = [
     company: "Interstride Pvt. Ltd.",
     role: "Frontend Developer",
     period: "Jun 2025 – Present",
-    project: "Interstride Platform — Student Portal & Admin Portal",
+    project:
+      "Interstride Platform — Student, Admin, Employer & Admission Portals",
     stack: ["React.js", "TypeScript", "Redux Toolkit"],
     logo: "/logos/interstride.svg",
     logoPlate: "light",
-    products: ["Student Portal", "Admin Portal"],
+    products: ["Student Portal", "Admin Portal", "Employer Portal", "Admission Portal"],
     metrics: [
       { value: "10+", label: "Features shipped", icon: "rocket" },
+      { value: "550+", label: "University partners", icon: "globe" },
       { value: "~55%", label: "Fewer API calls", icon: "zap" },
-      { value: "~45%", label: "Faster search & filter", icon: "trend" },
-      { value: "~95%", label: "On-time delivery", icon: "check" },
+      { value: "~40%", label: "Faster page load", icon: "trend" },
     ],
     highlights: [
-      "Architected and developed scalable Student & Admin Portal features supporting 7 user roles, shipping 10+ features across enterprise multi-role workflows.",
-      "Engineered a reusable component architecture adopted across 8+ platform modules, reducing duplicate code and accelerating feature delivery.",
-      "Built filtering, pagination, sorting, and debounced search with React Hooks — cutting redundant API calls by ~55% and improving search/filter UI response by ~45%.",
-      "Integrated RESTful APIs with Redux Toolkit for centralized state, improving data consistency across Student and Admin workflows.",
-      "Implemented lazy loading and component-level render optimization, improving initial page load by ~40%.",
-      "Partnered with backend, QA, and product across Agile sprints, maintaining ~95% on-time sprint delivery.",
+      "Architected and delivered 10+ production features across 4 role-based portals — Student, Admin, Employer, and Admission — supporting 7 distinct user roles on a platform serving 550+ university partners.",
+      "Engineered a reusable component architecture adopted across 8+ platform modules, eliminating duplicate code and accelerating delivery of each subsequent module.",
+      "Implemented debounced search, filtering, sorting, and pagination with React Hooks — cutting redundant API calls by ~55% and improving search/filter UI response time by ~45%.",
+      "Integrated REST APIs with Redux Toolkit for centralized state across all 4 portals, improving data consistency and removing duplicated data-fetching logic between Student, Admin, Employer, and Admission workflows.",
+      "Improved initial page-load performance by ~40% for a Student Portal with 250,000+ enrolled users, introducing route-level lazy loading and component-level render optimization.",
+      "Standardized frontend authentication and role-based authorization across 7 user roles, so each portal renders only the routes, actions, and data views permitted for the signed-in role.",
+      "Delivered responsive, cross-device interfaces for 8+ modules and partnered with backend, QA, and product teams across Agile/Scrum sprints, maintaining ~95% on-time sprint delivery.",
     ],
   },
   {
@@ -681,29 +782,29 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Student & Admin Portal",
+    title: "Multi-Portal Platform",
     client: "Interstride",
     stack: ["React.js", "TypeScript", "Redux Toolkit"],
     accent: "#FB7185",
-    metric: "7 roles · 10+ features",
+    metric: "4 portals · 7 roles · 550+ universities",
     logo: "/logos/interstride.svg",
     logoPlate: "light",
     // Current employer — see the open-ended role in `experiences`.
     status: "active",
     summary:
-      "Architected scalable Student and Admin Portal features supporting 7 user roles, with a reusable component architecture adopted across 8+ platform modules and REST APIs centralized in Redux Toolkit.",
+      "Architected 10+ features across 4 role-based portals — Student, Admin, Employer, and Admission — supporting 7 user roles, with a reusable component architecture adopted across 8+ platform modules and REST APIs centralized in Redux Toolkit.",
     features: [
-      "Student & Admin portals across 7 user roles",
+      "Student, Admin, Employer & Admission portals — 7 roles",
       "Reusable component architecture in 8+ modules",
       "Debounced search & filtering — ~55% fewer API calls",
-      "Lazy loading & render tuning — ~40% faster load",
+      "Lazy loading & render tuning — ~40% faster load for 250,000+ users",
     ],
     challenge:
-      "One platform had to serve seven distinct user roles and keep growing, without the interface splintering into disconnected, hard-to-maintain screens.",
+      "One platform had to serve four portals and seven distinct user roles across 550+ university partners, without the interface splintering into disconnected, hard-to-maintain screens.",
     solution:
       "Architected a reusable component system in React and TypeScript, centralizing REST data in Redux Toolkit so a single set of primitives powered every new module.",
     impact:
-      "A reusable foundation adopted across 8+ modules, with measurably lighter, faster screens — ~55% fewer API calls and ~40% quicker loads.",
+      "A reusable foundation adopted across 8+ modules, with measurably lighter, faster screens — ~55% fewer API calls and ~40% quicker loads for 250,000+ enrolled users.",
     liveUrl: "https://student.interstride.com/",
   },
   {
@@ -813,9 +914,9 @@ export interface Stat {
 }
 
 export const stats: Stat[] = [
-  { label: "Years of Experience", value: 4.5, suffix: "+" },
+  { label: "Years of Experience", value: 4.9, suffix: "+" },
   { label: "Enterprise Projects", value: 6, suffix: "+" },
-  { label: "Technologies", value: 16, suffix: "" },
+  { label: "Technologies", value: 20, suffix: "" },
   { label: "International Clients", value: 10, suffix: "+" },
   { label: "Developers Led", value: 6, suffix: "" },
   { label: "On-time Delivery", value: 95, suffix: "%" },
