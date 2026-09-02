@@ -2,9 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { Command, Menu, X, FileDown } from "lucide-react";
 import { navItems, profile } from "@/lib/data";
-import { useSmoothScroll } from "@/hooks/useSmoothScroll";
+import { useSmoothScroll, useSectionHref } from "@/hooks/useSmoothScroll";
 import { cn } from "@/lib/utils";
 import { LogoMark } from "./LogoMark";
 
@@ -13,6 +14,8 @@ export function Navbar({ onOpenCommand }: { onOpenCommand: () => void }) {
   const [active, setActive] = useState("hero");
   const [mobileOpen, setMobileOpen] = useState(false);
   const scrollTo = useSmoothScroll();
+  const pathname = usePathname();
+  const sectionHref = useSectionHref();
   const menuRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
@@ -123,7 +126,7 @@ export function Navbar({ onOpenCommand }: { onOpenCommand: () => void }) {
           )}
         >
           <a
-            href="#hero"
+            href={sectionHref("#hero")}
             onClick={(e) => onNav(e, "#hero")}
             className="flex items-center gap-2.5 pl-1 text-left"
             aria-label="Hemant Patil, back to top"
@@ -141,11 +144,13 @@ export function Navbar({ onOpenCommand }: { onOpenCommand: () => void }) {
 
           <ul className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) => {
-              const isActive = active === item.href.slice(1);
+              // Section tracking only means anything on the homepage; on a
+              // standalone route (/copyright, /privacy) nothing is "current".
+              const isActive = pathname === "/" && active === item.href.slice(1);
               return (
                 <li key={item.href}>
                   <a
-                    href={item.href}
+                    href={sectionHref(item.href)}
                     onClick={(e) => onNav(e, item.href)}
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
@@ -240,7 +245,7 @@ export function Navbar({ onOpenCommand }: { onOpenCommand: () => void }) {
                   transition={{ delay: i * 0.04 }}
                 >
                   <a
-                    href={item.href}
+                    href={sectionHref(item.href)}
                     onClick={(e) => onNav(e, item.href)}
                     className="block w-full rounded-xl px-4 py-3 text-left text-base text-ink transition hover:bg-[var(--hover)]"
                   >

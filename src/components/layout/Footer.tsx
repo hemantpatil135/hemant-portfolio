@@ -1,12 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { Github, Linkedin, Mail, Twitter, Instagram, Facebook, ArrowUpRight } from "lucide-react";
 import { profile, navItems } from "@/lib/data";
-import { useSmoothScroll } from "@/hooks/useSmoothScroll";
+import { useSmoothScroll, useSectionHref } from "@/hooks/useSmoothScroll";
 import { LogoMark } from "./LogoMark";
 
 export function Footer() {
   const scrollTo = useSmoothScroll();
+  const sectionHref = useSectionHref();
   const year = new Date().getFullYear();
 
   return (
@@ -53,7 +55,7 @@ export function Footer() {
             {navItems.slice(0, 5).map((item) => (
               <li key={item.href}>
                 <a
-                  href={item.href}
+                  href={sectionHref(item.href)}
                   onClick={(e) => {
                     e.preventDefault();
                     scrollTo(item.href, -80);
@@ -84,6 +86,15 @@ export function Footer() {
 
       <div className="section-shell mt-12 flex flex-col items-center justify-between gap-3 border-t border-[var(--border)] pt-6 text-xs text-muted sm:flex-row">
         <p>© {year} {profile.name}. All rights reserved.</p>
+        <nav aria-label="Legal" className="flex items-center gap-3">
+          <Link href="/copyright" className="transition hover:text-ink">
+            Copyright
+          </Link>
+          <span aria-hidden>·</span>
+          <Link href="/privacy" className="transition hover:text-ink">
+            Privacy
+          </Link>
+        </nav>
       </div>
     </footer>
   );

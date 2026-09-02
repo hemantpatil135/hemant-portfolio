@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback } from "react";
+import { usePathname } from "next/navigation";
 
 /** Resolve a scroll target (selector or absolute Y) to an absolute Y position. */
 function resolveTargetY(target: string | number, offset: number): number | null {
@@ -26,7 +27,15 @@ export function useSmoothScroll() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const raw = resolveTargetY(target, offset);
-    if (raw == null) return;
+    if (raw == null) {
+      // The shared nav/footer/palette links point at homepage sections, which
+      // don't exist on standalone routes (/copyright, /privacy). Send the
+      // browser home to the anchor instead of silently doing nothing.
+      if (typeof target === "string" && target.startsWith("#")) {
+        window.location.href = `/${target}`;
+      }
+      return;
+    }
 
     const maxY = document.documentElement.scrollHeight - window.innerHeight;
     const toY = Math.max(0, Math.min(maxY, raw));
@@ -47,4 +56,17 @@ export function useSmoothScroll() {
       easing: easeOut,
     });
   }, []);
+}
+
+/**
+ * Resolve a homepage-section anchor for the current route: `#about` on the
+ * homepage, `/#about` on a standalone route (/copyright, /privacy) so the link
+ * is still correct when opened in a new tab or followed without JS.
+ */
+export function useSectionHref() {
+  const pathname = usePathname();
+  return useCallback(
+    (href: string) => (pathname === "/" ? href : `/${href}`),
+    [pathname],
+  );
 }
