@@ -7,7 +7,13 @@ import {
   Building2,
   Globe,
   Code2,
-  Accessibility,
+  Users,
+  GraduationCap,
+  Gauge,
+  Zap,
+  ShieldCheck,
+  CalendarCheck,
+  BarChart3,
   MapPin,
   BadgeCheck,
   Sparkles,
@@ -21,10 +27,12 @@ import {
 import {
   about,
   aboutHighlights,
+  impact,
   journey,
   clients,
   profile,
   type IconName,
+  type ImpactStat,
 } from "@/lib/data";
 import { Reveal } from "@/components/ui/Reveal";
 import { TechIcon } from "@/components/ui/TechIcon";
@@ -37,7 +45,18 @@ const highlightIcons: Record<string, LucideIcon> = {
   building: Building2,
   clients: Globe,
   code: Code2,
-  a11y: Accessibility,
+  team: Users,
+};
+
+const impactIcons: Record<ImpactStat["icon"], LucideIcon> = {
+  experience: Rocket,
+  students: GraduationCap,
+  universities: Landmark,
+  speed: Gauge,
+  api: Zap,
+  testing: ShieldCheck,
+  team: Users,
+  delivery: CalendarCheck,
 };
 
 /** Small uppercase block heading with a leading icon. */
@@ -117,7 +136,7 @@ export function About() {
                 <div className="flex items-center justify-between gap-4">
                   <dt className="text-xs uppercase tracking-wider text-muted">Based in</dt>
                   <dd className="flex items-center gap-1.5 text-sm font-medium text-ink">
-                    <MapPin className="h-3.5 w-3.5 text-accent" /> Surat, India
+                    <MapPin className="h-3.5 w-3.5 text-accent" /> Pune, India
                   </dd>
                 </div>
                 <div className="h-px bg-[var(--border)]" />
@@ -218,6 +237,28 @@ export function About() {
                     );
                   })}
                 </div>
+              </div>
+            </Reveal>
+
+            {/* Impact in numbers — resume-backed figures only */}
+            <Reveal>
+              <div className="flex flex-col gap-5">
+                <BlockHeading icon={BarChart3}>Impact in numbers</BlockHeading>
+                <dl className="grid grid-cols-2 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] [gap:1px] sm:grid-cols-4">
+                  {impact.map((s) => {
+                    const Icon = impactIcons[s.icon];
+                    return (
+                      <div key={s.label} className="flex flex-col gap-1.5 bg-deep/90 p-4">
+                        <Icon className="h-4 w-4 text-accent" aria-hidden />
+                        {/* dt before dd for valid markup; the label is shown under the value. */}
+                        <dt className="order-last text-[11px] leading-snug text-muted">{s.label}</dt>
+                        <dd className="text-2xl font-bold tabular-nums leading-none text-ink">
+                          {s.value}
+                        </dd>
+                      </div>
+                    );
+                  })}
+                </dl>
               </div>
             </Reveal>
 

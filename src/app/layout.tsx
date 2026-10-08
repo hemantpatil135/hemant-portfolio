@@ -121,8 +121,8 @@ const person = {
   image: `${siteConfig.url}/opengraph-image`,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Surat",
-    addressRegion: "Gujarat",
+    addressLocality: "Pune",
+    addressRegion: "Maharashtra",
     addressCountry: "IN",
   },
   worksFor: {
@@ -133,7 +133,7 @@ const person = {
     "@type": "CollegeOrUniversity",
     name: e.institution,
   })),
-  knowsLanguage: ["English", "Hindi", "Gujarati"],
+  knowsLanguage: ["English", "Hindi", "Marathi", "Gujarati"],
   sameAs: [
     profile.links.linkedin,
     profile.links.github,

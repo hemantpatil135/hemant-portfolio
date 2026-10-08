@@ -35,3 +35,9 @@ next-env.d.ts
 
 # local data-maintenance script (not part of the app)
 /update_data.py
+
+# Claude Code local config
+.claude/
+
+# Copyright registration submission (keep local, not part of the app)
+/Hemant_Patil_Portfolio_Source_Code_Copyright.pdf

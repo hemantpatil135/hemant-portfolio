@@ -33,6 +33,8 @@ export type IconName =
 export interface Profile {
   name: string;
   role: string;
+  /** Core stack shown under the role in the hero. */
+  techLine: string;
   tagline: string;
   location: string;
   email: string;
@@ -54,17 +56,18 @@ export interface Profile {
 
 export const profile: Profile = {
   name: "Hemant Patil",
-  role: "Frontend Software Engineer",
+  role: "Senior Frontend Engineer",
+  techLine: "React.js · TypeScript · Next.js",
   tagline:
-    "Architecting scalable, high-performance enterprise web applications with React & TypeScript.",
-  location: "Surat, Gujarat, India",
+    "I build scalable, high-performance frontend applications and own them end to end — from architecture and API layer to auth, CI/CD and code review.",
+  location: "Pune, Maharashtra, India",
   email: "patilhemantsing@gmail.com",
   phone: "+91 9157094137",
   summary:
-    "Frontend Software Engineer with 4.9+ years of experience architecting and building scalable, high-performance enterprise web applications using React.js, TypeScript, and modern state management patterns. Proven track record designing reusable component architecture, optimizing frontend performance, and integrating complex REST APIs across multi-role platforms for enterprise and international clients.",
-  yearsExperience: "4.9+",
+    "Senior Frontend Engineer with about 5 years of experience building large React.js, TypeScript and Next.js applications for clients like American Express, Pearson, Axis Bank and YES Securities. Owns frontend work end to end — folder structure, API layer, authentication, state management, CI/CD and code review — on platforms used by 250,000+ students and 550+ universities.",
+  yearsExperience: "~5",
   links: {
-    linkedin: "https://linkedin.com/in/hemantpatil333",
+    linkedin: "https://linkedin.com/in/hemantpatil135",
     github: "https://github.com/hemantpatil135",
     email: "mailto:patilhemantsing@gmail.com",
     phone: "tel:+919157094137",
@@ -90,24 +93,24 @@ export const about = {
   /** Themed hero question for the About section ("mask" = the person behind the work). */
   question: "Who is behind the mask?",
   intro:
-    "I build enterprise-grade web applications that are scalable, accessible and performance-focused.",
+    "Senior Frontend Engineer with about 5 years building large React.js, TypeScript and Next.js applications for enterprise clients.",
   /** The "My Story" narrative paragraph. */
   story:
-    "I turn complex enterprise UI problems into clean, accessible, high-performance React — work I've shipped for global clients like American Express, Pearson, and Axis Bank.",
+    "I own frontend work from the first folder to production — module structure, a shared API layer, authentication, state management, CI/CD and code review. That work has shipped for American Express, Pearson, Axis Bank, YES Securities and Interstride, on platforms used by 250,000+ students across 550+ universities. Earlier, as a Team Leader, I led 6 developers and mentored juniors.",
   bio: [
-    "I'm a Frontend Software Engineer based in Surat, India, with 4.9+ years building enterprise-grade React applications for international clients including American Express, Pearson, and Axis Bank.",
-    "My focus is reusable component architecture, frontend performance optimization, and integrating complex REST APIs across multi-role platforms. I thrive in Agile/Scrum teams, collaborating closely with backend, QA, and product.",
-    "I care deeply about clean, maintainable, and accessible code — and about mentoring the engineers around me. I was promoted from Developer to Team Leader within two years.",
+    "I'm a Senior Frontend Engineer based in Pune, India, with about 5 years building React.js, TypeScript and Next.js applications for clients including American Express, Pearson, Axis Bank and YES Securities.",
+    "I own frontend work end to end: folder structure, API layer, authentication, state management, CI/CD and code review — with a focus on performance and test coverage.",
+    "I was promoted from React.js Developer to Team Leader within 2 years, leading a team of 6 developers and mentoring juniors.",
   ],
   focus: [
-    "Scalable component architecture",
-    "Frontend performance optimization",
-    "Type-safe state management",
-    "Accessible, responsive UI",
+    "Frontend architecture & shared API layer",
+    "Performance — Lighthouse & Core Web Vitals",
+    "Auth & role-based authorization",
+    "Type-safe state with Redux Toolkit",
   ],
   facts: [
-    { label: "Based in", value: "Surat, India" },
-    { label: "Experience", value: "4.9+ years" },
+    { label: "Based in", value: "Pune, India" },
+    { label: "Experience", value: "~5 years" },
     { label: "Enterprise clients", value: "10+ international" },
     { label: "Languages", value: "English · Hindi · Marathi · Gujarati" },
   ] as AboutFact[],
@@ -117,7 +120,7 @@ export const about = {
 
 /** "My Story" highlight cards — icon key resolved in the component. */
 export interface AboutHighlight {
-  icon: "rocket" | "building" | "clients" | "code" | "a11y";
+  icon: "rocket" | "building" | "clients" | "code" | "team";
   value?: string;
   title: string;
   sub: string;
@@ -126,24 +129,24 @@ export interface AboutHighlight {
 export const aboutHighlights: AboutHighlight[] = [
   {
     icon: "rocket",
-    value: "4.9+",
+    value: "~5",
     title: "Years of Experience",
-    sub: "Building production frontends",
+    sub: "React.js, TypeScript & Next.js",
   },
   {
     icon: "building",
     title: "Enterprise Applications",
-    sub: "Built for global organizations",
+    sub: "Amex, Pearson, Axis Bank, YES Securities",
   },
   {
     icon: "code",
-    title: "Clean, Scalable & Maintainable Code",
-    sub: "Reusable component architecture",
+    title: "End-to-end Ownership",
+    sub: "Architecture through delivery",
   },
   {
-    icon: "a11y",
-    title: "Accessibility Focused",
-    sub: "WCAG & inclusive by default",
+    icon: "team",
+    title: "Team Leadership",
+    sub: "Led 6 developers, mentored juniors",
   },
 ];
 
@@ -171,29 +174,33 @@ export const journey: JourneyMilestone[] = [
   {
     year: "2025",
     role: "Software Engineer",
-    org: "iauro · Yes Securities",
-    blurb: "Built micro-frontend modules with independent deployment.",
+    org: "iauro · YES Securities",
+    blurb: "Built independently deployable micro-frontend modules.",
   },
   {
     year: "2025+",
-    role: "Frontend Engineer",
+    role: "Frontend Developer",
     org: "Interstride",
-    blurb: "Architecting 4 role-based portals across 7 user roles.",
+    blurb: "Owning frontend for 4 role-based portals across 7 user roles.",
   },
 ];
 
-/** "Impact in Numbers" — every figure is drawn from the resume (see `stats`). */
+/** "Impact in numbers" — every figure is stated in the resume; "~" kept where the resume uses it. */
 export interface ImpactStat {
-  icon: "projects" | "clients" | "team" | "delivery";
+  icon: "experience" | "students" | "universities" | "speed" | "api" | "team" | "testing" | "delivery";
   value: string;
   label: string;
 }
 
 export const impact: ImpactStat[] = [
-  { icon: "projects", value: "6+", label: "Enterprise Projects" },
-  { icon: "clients", value: "10+", label: "International Clients" },
-  { icon: "team", value: "6", label: "Developers Led" },
-  { icon: "delivery", value: "95%", label: "On-time Delivery" },
+  { icon: "experience", value: "~5 yrs", label: "Frontend engineering" },
+  { icon: "students", value: "250K+", label: "Students on the platform" },
+  { icon: "universities", value: "550+", label: "Universities served" },
+  { icon: "speed", value: "~40%", label: "Faster Student Portal load" },
+  { icon: "api", value: "~55%", label: "Fewer redundant API calls" },
+  { icon: "testing", value: "100%", label: "Jest coverage on owned features" },
+  { icon: "team", value: "6", label: "Developers led" },
+  { icon: "delivery", value: "~95%", label: "On-time sprint delivery" },
 ];
 
 /** Enterprise clients, with the plate colour each brand logo reads best on. */
@@ -262,9 +269,9 @@ export const reactTool: StackTool = {
     "Suspense & Lazy Loading",
   ],
   usedIn: [
-    { title: "Admin Dashboard", icon: "LayoutDashboard" },
-    { title: "Banking Portal", icon: "Building2" },
-    { title: "Analytics Platform", icon: "BarChart3" },
+    { title: "Interstride Portals", icon: "Users" },
+    { title: "Amex Travel", icon: "CreditCard" },
+    { title: "Axis Banking Portal", icon: "Building2" },
   ],
   planetType: "sun",
   orbitRadius: 0,
@@ -290,9 +297,9 @@ export const orbitTools: StackTool[] = [
       "Domain Modeling",
     ],
     usedIn: [
-      { title: "Enterprise Apps", icon: "Building" },
-      { title: "Design Systems", icon: "Palette" },
-      { title: "Micro Frontends", icon: "Network" },
+      { title: "Interstride Portals", icon: "Users" },
+      { title: "Pearson Console+", icon: "BookOpen" },
+      { title: "This Portfolio", icon: "Globe" },
     ],
     planetType: "crystal",
     orbitRadius: 6,
@@ -335,8 +342,9 @@ export const orbitTools: StackTool[] = [
       "Production React with routing, rendering and performance built in.",
     uses: ["SSR & SSG", "Routing", "Image Optimization", "Performance"],
     usedIn: [
-      { title: "E-Commerce", icon: "ShoppingCart" },
-      { title: "Corporate Site", icon: "Globe" },
+      { title: "Pearson Console+", icon: "BookOpen" },
+      { title: "Company Website", icon: "Globe" },
+      { title: "This Portfolio", icon: "Globe" },
     ],
     planetType: "moon",
     orbitRadius: 11,
@@ -359,10 +367,7 @@ export const orbitTools: StackTool[] = [
       "Dark Mode",
       "Rapid Prototyping",
     ],
-    usedIn: [
-      { title: "SaaS Platform", icon: "LayoutTemplate" },
-      { title: "Marketing Site", icon: "Globe" },
-    ],
+    usedIn: [{ title: "This Portfolio", icon: "Globe" }],
     planetType: "gas",
     orbitRadius: 14,
     orbitSpeed: 0.4,
@@ -378,10 +383,10 @@ export const orbitTools: StackTool[] = [
     level: 88,
     description:
       "Reusable component libraries and render optimization at scale.",
-    uses: ["Component Libraries", "Theming", "Render Tuning", "Accessibility"],
+    uses: ["Component Libraries", "Theming", "Render Tuning", "Storybook Docs"],
     usedIn: [
-      { title: "Banking Portal", icon: "Building2" },
-      { title: "CRM Dashboard", icon: "LayoutDashboard" },
+      { title: "YES Securities", icon: "BarChart3" },
+      { title: "Client Apps", icon: "FolderGit2" },
     ],
     planetType: "metallic",
     orbitRadius: 17,
@@ -420,8 +425,8 @@ export const orbitTools: StackTool[] = [
     description: "Robust REST integration.",
     uses: ["Data Fetching", "Error Handling", "Pagination", "Client Caching"],
     usedIn: [
-      { title: "Payment Gateway", icon: "CreditCard" },
-      { title: "User Management", icon: "Users" },
+      { title: "Interstride Portals", icon: "Users" },
+      { title: "YES Securities", icon: "BarChart3" },
     ],
     planetType: "digital",
     orbitRadius: 19,
@@ -454,7 +459,7 @@ export const orbitTools: StackTool[] = [
     level: 76,
     description: "Unit testing for reliable components.",
     uses: ["Unit Tests", "Snapshots", "Mocks", "Coverage"],
-    usedIn: [{ title: "Core UI Library", icon: "Component" }],
+    usedIn: [{ title: "Amex Travel", icon: "CreditCard" }],
     planetType: "moon",
     orbitRadius: 23,
     orbitSpeed: 0.2,
@@ -510,22 +515,6 @@ export const orbitTools: StackTool[] = [
     planetSize: 1.0,
   },
   {
-    id: "angular",
-    name: "Angular.js",
-    icon: "angular",
-    role: "Framework",
-    color: "#DD0031",
-    level: 68,
-    description: "Maintaining and extending Angular client applications.",
-    uses: ["Components", "Services & DI", "Routing", "Forms"],
-    usedIn: [{ title: "Client Projects", icon: "FolderGit2" }],
-    planetType: "volcanic",
-    orbitRadius: 4,
-    orbitSpeed: 1.1,
-    orbitInclination: -0.12,
-    planetSize: 0.9,
-  },
-  {
     id: "sass",
     name: "SASS",
     icon: "sass",
@@ -534,7 +523,7 @@ export const orbitTools: StackTool[] = [
     level: 85,
     description: "Structured, maintainable stylesheets at scale.",
     uses: ["Variables & Mixins", "Nesting", "Partials", "Theming"],
-    usedIn: [{ title: "Design Systems", icon: "Palette" }],
+    usedIn: [{ title: "Client Projects", icon: "FolderGit2" }],
     planetType: "gas",
     orbitRadius: 12,
     orbitSpeed: 0.45,
@@ -616,9 +605,71 @@ export const stackFeatures: StackFeature[] = [
   },
   {
     icon: "learning",
-    title: "Always Learning",
-    sub: "Exploring and adapting new tech",
+    title: "AI-assisted Workflow",
+    sub: "Claude, ChatGPT & GitHub Copilot day to day",
   },
+];
+
+/** Full skill set, grouped exactly as on the resume. */
+export interface SkillGroup {
+  title: string;
+  items: string[];
+}
+
+export const skillGroups: SkillGroup[] = [
+  { title: "Languages", items: ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3"] },
+  {
+    title: "Frontend",
+    items: [
+      "React.js",
+      "Next.js",
+      "React Hooks",
+      "Context API",
+      "Micro Frontend Architecture",
+      "Component-Driven Development",
+      "Responsive Design",
+    ],
+  },
+  {
+    title: "State Management",
+    items: ["Redux", "Redux Toolkit", "Redux Saga", "Redux Thunk", "Context API"],
+  },
+  {
+    title: "Frontend Architecture",
+    items: [
+      "Folder Structure & Module Design",
+      "API Layer Design",
+      "Authentication",
+      "Role-Based Authorization",
+      "Reusable Component Architecture",
+      "Storybook",
+    ],
+  },
+  {
+    title: "Web Performance",
+    items: [
+      "Chrome DevTools Lighthouse",
+      "Core Web Vitals",
+      "Bundle-Size Optimization",
+      "Lazy Loading",
+      "Code Splitting",
+      "Rendering Optimization",
+    ],
+  },
+  { title: "Testing & Quality", items: ["Jest", "Unit Testing", "Code Reviews"] },
+  {
+    title: "CI/CD",
+    items: ["GitHub Actions", "Jenkins", "GitLab CI", "Bitbucket Pipelines"],
+  },
+  { title: "APIs & Backend", items: ["REST APIs", "API Integration", "Node.js"] },
+  {
+    title: "UI & Styling",
+    items: ["Material UI", "Styled Components", "Tailwind CSS", "SASS", "Bootstrap"],
+  },
+  { title: "Databases", items: ["MySQL", "MongoDB"] },
+  { title: "Tools", items: ["Git", "Jira", "Rally", "Trello", "Asana"] },
+  { title: "AI & Developer Tools", items: ["Claude", "ChatGPT", "GitHub Copilot"] },
+  { title: "Methodologies", items: ["Agile", "Scrum"] },
 ];
 
 /** Bottom "Engineering Strengths" cards. */
@@ -631,33 +682,33 @@ export interface EngineeringStrength {
 export const engineeringStrengths: EngineeringStrength[] = [
   {
     icon: "component",
-    title: "Component Driven Development",
-    sub: "Reusable, scalable, maintainable.",
+    title: "Component Architecture",
+    sub: "Reusable React + TypeScript components.",
   },
   {
     icon: "state",
-    title: "State Management Mastery",
-    sub: "Predictable state, better apps.",
+    title: "State Management",
+    sub: "Redux Toolkit, Redux Saga, Context API.",
   },
   {
     icon: "performance",
     title: "Performance Optimization",
-    sub: "Speed, Core Web Vitals & efficient rendering.",
+    sub: "Lighthouse, Core Web Vitals, code splitting.",
   },
   {
     icon: "api",
-    title: "API Integration Expertise",
-    sub: "RESTful services, auth & error handling.",
+    title: "API Layer & Auth",
+    sub: "Shared REST layer, role-based authorization.",
   },
   {
     icon: "testing",
-    title: "Testing & Code Quality",
-    sub: "Reliable, bug-free and tested.",
+    title: "Testing & Code Review",
+    sub: "Jest unit tests and CI/CD pipelines.",
   },
   {
     icon: "a11y",
-    title: "Responsive & Accessible UI",
-    sub: "Accessible by default, for everyone.",
+    title: "Responsive UI",
+    sub: "Consistent across devices and portals.",
   },
 ];
 
@@ -678,6 +729,8 @@ export interface Experience {
   products?: string[];
   /** Names matching `clients`, for roles delivered to named enterprise brands. */
   clientNames?: string[];
+  /** In-company career steps, earliest first — rendered as a promotion track. */
+  progression?: { role: string; note: string }[];
 }
 
 export const experiences: Experience[] = [
@@ -698,21 +751,22 @@ export const experiences: Experience[] = [
       { value: "~40%", label: "Faster page load", icon: "trend" },
     ],
     highlights: [
-      "Architected and delivered 10+ production features across 4 role-based portals — Student, Admin, Employer, and Admission — supporting 7 distinct user roles on a platform serving 550+ university partners.",
-      "Engineered a reusable component architecture adopted across 8+ platform modules, eliminating duplicate code and accelerating delivery of each subsequent module.",
-      "Implemented debounced search, filtering, sorting, and pagination with React Hooks — cutting redundant API calls by ~55% and improving search/filter UI response time by ~45%.",
-      "Integrated REST APIs with Redux Toolkit for centralized state across all 4 portals, improving data consistency and removing duplicated data-fetching logic between Student, Admin, Employer, and Admission workflows.",
-      "Improved initial page-load performance by ~40% for a Student Portal with 250,000+ enrolled users, introducing route-level lazy loading and component-level render optimization.",
-      "Standardized frontend authentication and role-based authorization across 7 user roles, so each portal renders only the routes, actions, and data views permitted for the signed-in role.",
-      "Delivered responsive, cross-device interfaces for 8+ modules and partnered with backend, QA, and product teams across Agile/Scrum sprints, maintaining ~95% on-time sprint delivery.",
+      "Shipped 10+ production features across 4 role-based portals — Student, Admin, Employer and Admission — for a platform used by 550+ universities and 7 user roles, owning frontend design and delivery in React.js and TypeScript within an 8-person team.",
+      "Set up the frontend folder structure, a shared API layer and the authentication pattern, giving all 4 portals one consistent base for new modules.",
+      "Made the Student Portal load ~40% faster for 250,000+ students with route-level lazy loading, fewer unnecessary re-renders and a trimmed bundle, tracked with Chrome DevTools Lighthouse and Core Web Vitals.",
+      "Built debounced search, filtering, sorting and pagination with React Hooks — cutting redundant API calls by ~55% and making search/filter results ~45% faster.",
+      "Designed a reusable React + TypeScript component architecture that removed duplicate code across 8+ modules and sped up every module built after it.",
+      "Moved REST API calls and shared state into Redux Toolkit, removing duplicated data-fetching logic across all 4 portals and keeping data consistent between workflows.",
+      "Standardized role-based authorization across every portal, so each of the 7 user roles sees only the routes, actions and data it is allowed to.",
+      "Kept on-time sprint delivery at ~95% by running code reviews and frontend CI/CD pipelines, working closely with backend, QA and product in Agile sprints.",
     ],
   },
   {
     company: "iauro Systems Pvt. Ltd.",
     role: "Software Engineer",
     period: "Feb 2025 – May 2025",
-    project: "Yes Securities",
-    stack: ["React.js", "Material UI", "Micro Frontend"],
+    project: "Client: YES Securities",
+    stack: ["React.js", "Micro Frontend", "Material UI", "Storybook"],
     // Their footer mark is pure white, so it needs the dark plate.
     logo: "/logos/iauro.svg",
     logoPlate: "dark",
@@ -722,31 +776,37 @@ export const experiences: Experience[] = [
       { value: "~30%", label: "Fewer UI defects", icon: "shield" },
     ],
     highlights: [
-      "Developed scalable frontend modules using React.js and Micro Frontend architecture, enabling independent deployment across 4+ modules.",
-      "Implemented advanced filtering, sorting, and CRUD against REST APIs, reducing manual data-handling effort by ~35%.",
-      "Built reusable Material UI components and optimized rendering, reducing unnecessary re-renders by ~35%.",
-      "Standardized component patterns across 8+ modules, improving maintainability and reducing reported UI defects by ~30%.",
+      "Made 4+ modules independently deployable by building them on a Micro Frontend architecture in React.js.",
+      "Reduced reported UI defects by ~30% across 8+ modules by building a reusable Material UI component library, documenting it in Storybook and standardizing component patterns.",
+      "Cut unnecessary re-renders by ~35% by profiling with Chrome DevTools Lighthouse and Core Web Vitals, then fixing rendering and bundle-size issues.",
+      "Reduced manual data handling by ~35% by building filtering, sorting and CRUD workflows against REST APIs.",
     ],
   },
   {
     company: "Koli Infotech Pvt. Ltd.",
-    role: "React.js Developer → Team Leader",
+    role: "Team Leader",
     period: "Nov 2021 – Feb 2025",
-    stack: ["React.js", "Redux Toolkit", "Material UI"],
+    project: "Enterprise client delivery",
+    stack: ["React.js", "Next.js", "Redux Toolkit", "Redux Saga", "Material UI"],
     logo: "/logos/koli.png",
     logoPlate: "light",
+    progression: [
+      { role: "React.js Developer", note: "Joined Nov 2021" },
+      { role: "Team Leader", note: "Promoted within 2 years" },
+    ],
     metrics: [
       { value: "6", label: "Developers led", icon: "users" },
+      { value: "~90%", label: "Projects on time", icon: "check" },
       { value: "10+", label: "International clients", icon: "globe" },
-      { value: "~35%", label: "Faster page loads", icon: "gauge" },
     ],
     clientNames: ["American Express", "Pearson", "Axis Bank"],
     highlights: [
-      "Led frontend development and technical direction for a team of 6 remote developers, delivering enterprise apps across 6+ client engagements — including American Express, Pearson, and Axis Bank — with ~90% on-time delivery.",
-      "Architected scalable, responsive applications supporting 10+ international clients.",
-      "Directed REST API integration and workflow optimization, reducing page load times by ~35%.",
-      "Mentored 3 junior developers and drove Agile sprint planning and code review, improving sprint velocity by ~25%.",
-      "Promoted from React.js Developer to Team Leader within 2 years based on technical execution and leadership impact.",
+      "Delivered ~90% of projects on time across 6+ enterprise engagements — including American Express, Pearson and Axis Bank — by leading a team of 6 remote developers and setting technical direction.",
+      "Promoted from React.js Developer to Team Leader within 2 years on the strength of delivery and leadership.",
+      "Delivered scalable, responsive React.js applications for 10+ international clients, designing their architecture with Redux Toolkit and Material UI.",
+      "Reduced page load times by ~35% by directing REST API integration and reworking frontend workflows.",
+      "Raised team sprint velocity by ~25% by mentoring 3 junior developers (including on Next.js projects), running sprint planning and owning code reviews.",
+      "Built the company website and the Pearson Console+ project with Next.js.",
     ],
   },
 ];
@@ -778,6 +838,8 @@ export interface Project {
    * surface; the "Live project" button only renders when present.
    */
   liveUrl?: string;
+  /** Own work rather than NDA client work — changes the preview caption. */
+  personal?: boolean;
 }
 
 export const projects: Project[] = [
@@ -792,58 +854,58 @@ export const projects: Project[] = [
     // Current employer — see the open-ended role in `experiences`.
     status: "active",
     summary:
-      "Architected 10+ features across 4 role-based portals — Student, Admin, Employer, and Admission — supporting 7 user roles, with a reusable component architecture adopted across 8+ platform modules and REST APIs centralized in Redux Toolkit.",
+      "Shipped 10+ production features across 4 role-based portals — Student, Admin, Employer and Admission — for 7 user roles, on a shared folder structure, API layer and authentication pattern, with REST data and shared state in Redux Toolkit.",
     features: [
       "Student, Admin, Employer & Admission portals — 7 roles",
-      "Reusable component architecture in 8+ modules",
+      "Shared API layer, auth pattern & role-based authorization",
       "Debounced search & filtering — ~55% fewer API calls",
-      "Lazy loading & render tuning — ~40% faster load for 250,000+ users",
+      "Lazy loading & bundle trimming — ~40% faster load for 250,000+ students",
     ],
     challenge:
-      "One platform had to serve four portals and seven distinct user roles across 550+ university partners, without the interface splintering into disconnected, hard-to-maintain screens.",
+      "One platform had to serve four portals and seven distinct user roles across 550+ universities, without the interface splintering into disconnected, hard-to-maintain screens.",
     solution:
-      "Architected a reusable component system in React and TypeScript, centralizing REST data in Redux Toolkit so a single set of primitives powered every new module.",
+      "Set up one frontend foundation — folder structure, shared API layer, auth pattern and a reusable React + TypeScript component architecture — with REST data centralized in Redux Toolkit.",
     impact:
-      "A reusable foundation adopted across 8+ modules, with measurably lighter, faster screens — ~55% fewer API calls and ~40% quicker loads for 250,000+ enrolled users.",
+      "Duplicate code removed across 8+ modules, ~55% fewer redundant API calls, ~45% faster search/filter results and a ~40% faster Student Portal for 250,000+ students.",
     liveUrl: "https://student.interstride.com/",
   },
   {
     title: "Travel Booking Platform",
     client: "American Express",
-    stack: ["React.js", "Redux Saga"],
+    stack: ["React.js", "Redux Saga", "Jest"],
     accent: "#FB923C",
-    metric: "~40% faster refunds",
+    metric: "~40% faster refunds · 100% Jest coverage",
     logo: "/logos/amex.svg",
     logoPlate: "light",
     summary:
-      "Built Hotel Cancellation and Refund modules end-to-end, using Redux Saga to orchestrate complex asynchronous refund state transitions and side effects.",
+      "Built the Hotel Cancellation and Refund modules end to end, using Redux Saga to handle complex asynchronous refund states and side effects, with Jest unit tests written alongside the code.",
     features: [
       "End-to-end hotel cancellation & refund flows",
-      "Redux Saga for complex async side effects",
+      "Redux Saga for complex async refund states",
       "Reduced refund processing time by ~40%",
-      "Robust handling of multi-step state transitions",
+      "100% Jest test coverage on every feature built",
     ],
     challenge:
       "Hotel cancellations and refunds run on multi-step, asynchronous state that can strand a booking mid-flow if any single step fails.",
     solution:
-      "Built the cancellation and refund modules end-to-end with Redux Saga, orchestrating the async side effects and state transitions as one explicit, testable flow.",
+      "Owned the cancellation and refund modules end to end with Redux Saga, orchestrating the async side effects as one explicit flow and covering it with Jest unit tests.",
     impact:
-      "Refund processing time cut by ~40%, with reliable handling of every multi-step cancellation.",
+      "Refund processing time cut by ~40%, with 100% test coverage on every feature built.",
     liveUrl:
       "https://www.americanexpress.com/en-ca/travel/the-hotel-collection/",
   },
   {
     title: "Console+",
     client: "Pearson",
-    stack: ["React.js", "Redux Toolkit", "TypeScript"],
+    stack: ["Next.js", "React.js", "TypeScript", "Redux Toolkit"],
     accent: "#F97316",
-    metric: "~30% faster course setup",
+    metric: "~30% faster course setup · 5+ content teams",
     logo: "/logos/pearson.png",
     logoPlate: "dark",
     summary:
-      "Built dynamic, instructor-driven course creation modules with Redux Toolkit state management and TypeScript for type-safe data flow, powering Pearson's education platform.",
+      "Built instructor-driven course creation modules for Pearson's education platform with Next.js, Redux Toolkit and type-safe TypeScript data flow.",
     features: [
-      "Dynamic, instructor-driven course authoring",
+      "Instructor-driven course creation modules",
       "Type-safe data flow with TypeScript",
       "Supported 5+ content teams",
       "Reduced course setup time by ~30%",
@@ -851,7 +913,7 @@ export const projects: Project[] = [
     challenge:
       "Content teams needed to author courses dynamically, but ad-hoc data flow made the tooling fragile and slow to extend across teams.",
     solution:
-      "Delivered instructor-driven course-creation modules on Redux Toolkit with end-to-end TypeScript, giving the data flow the type safety to scale.",
+      "Delivered instructor-driven course-creation modules on Next.js and Redux Toolkit with end-to-end TypeScript, giving the data flow the type safety to scale.",
     impact:
       "Course setup ~30% faster, supporting 5+ content teams on a type-safe foundation.",
     liveUrl: "https://login.pearson.com/v1/piapi/iesui/signin",
@@ -865,7 +927,7 @@ export const projects: Project[] = [
     logo: "/logos/muis.png",
     logoPlate: "dark",
     summary:
-      "Developed receipt generation and editing workflows with robust validation and error handling for a customer relationship management platform.",
+      "Built receipt generation and editing flows with strong validation and error handling for a customer relationship management platform.",
     features: [
       "Receipt generation & editing workflows",
       "Robust form validation and error handling",
@@ -904,6 +966,31 @@ export const projects: Project[] = [
       "A responsive, consistent portal serving 1,000+ end users at scale.",
     liveUrl: "https://omni.axis.bank.in/axisretailbanking/",
   },
+  {
+    title: "Personal Portfolio",
+    client: "Hemant Patil",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    accent: "#FB923C",
+    metric: "Vercel · Dynamic OG images · SEO metadata",
+    logo: "/favicon.svg",
+    logoPlate: "dark",
+    personal: true,
+    summary:
+      "This site — built with Next.js, TypeScript and Tailwind CSS and deployed on Vercel, with dynamically generated Open Graph images and SEO metadata.",
+    features: [
+      "Next.js App Router with TypeScript",
+      "Dynamic Open Graph image generation",
+      "SEO metadata, sitemap & structured data",
+      "Deployed on Vercel",
+    ],
+    challenge:
+      "A portfolio has to load fast and share well — recruiters often see the link preview before they ever see the site.",
+    solution:
+      "Built it on Next.js with TypeScript and Tailwind CSS, generating Open Graph images on demand and shipping SEO metadata with every page.",
+    impact:
+      "A fast, shareable portfolio deployed on Vercel with rich link previews.",
+    liveUrl: "https://hemantpatil.vercel.app",
+  },
 ];
 
 export interface Stat {
@@ -914,12 +1001,12 @@ export interface Stat {
 }
 
 export const stats: Stat[] = [
-  { label: "Years of Experience", value: 4.9, suffix: "+" },
+  { label: "Years of Experience", value: 5, suffix: "", prefix: "~" },
   { label: "Enterprise Projects", value: 6, suffix: "+" },
   { label: "Technologies", value: 20, suffix: "" },
   { label: "International Clients", value: 10, suffix: "+" },
   { label: "Developers Led", value: 6, suffix: "" },
-  { label: "On-time Delivery", value: 95, suffix: "%" },
+  { label: "On-time Delivery", value: 95, suffix: "%", prefix: "~" },
 ];
 
 export interface EducationItem {

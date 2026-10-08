@@ -423,6 +423,15 @@ export function Education() {
               </div>
             </Reveal>
           </div>
+
+          <Reveal className="rounded-3xl border border-[var(--border)] bg-[var(--card)] p-5 backdrop-blur-xl sm:p-6">
+            <PanelTitle icon={Globe}>Languages</PanelTitle>
+            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {languages.map((lang) => (
+                <LangBadge key={lang.name} lang={lang} />
+              ))}
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -82,10 +82,16 @@ export function Hero() {
         >
           {profile.role}
         </motion.h2>
+        <motion.p
+          variants={item}
+          className="mt-2 font-mono text-sm tracking-wide text-accent sm:text-base"
+        >
+          {profile.techLine}
+        </motion.p>
 
         <motion.p variants={item} className="mt-5 max-w-xl text-balance text-base text-muted sm:text-lg">
           {profile.tagline} <span className="text-ink">{profile.yearsExperience} years</span> shipping
-          enterprise React for clients like American Express, Pearson & Axis Bank.
+          for American Express, Pearson, Axis Bank, YES Securities & Interstride.
         </motion.p>
 
         <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">

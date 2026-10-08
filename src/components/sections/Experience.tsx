@@ -168,6 +168,36 @@ function StackRow({ stack }: { stack: string[] }) {
   );
 }
 
+/** In-company promotion track: earlier role → current role, left to right. */
+function ProgressionTrack({ steps }: { steps: NonNullable<Role["progression"]> }) {
+  return (
+    <ol
+      aria-label="Career progression"
+      className="flex flex-wrap items-stretch gap-2 rounded-2xl border border-accent/25 bg-primary/[0.05] p-2.5"
+    >
+      {steps.map((s, i) => {
+        const last = i === steps.length - 1;
+        return (
+          <li key={s.role} className="flex items-center gap-2">
+            {i > 0 && <TrendingUp className="h-4 w-4 shrink-0 text-accent" aria-hidden />}
+            <span
+              className={cn(
+                "flex flex-col rounded-xl px-3 py-1.5",
+                last ? "border border-accent/50 bg-primary/15" : "border border-[var(--border)]",
+              )}
+            >
+              <span className={cn("text-sm font-semibold", last ? "text-ink" : "text-muted")}>
+                {s.role}
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.14em] text-accent">{s.note}</span>
+            </span>
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
+
 function StatusPill({ active }: { active: boolean }) {
   return (
     <span
@@ -271,7 +301,7 @@ export function Experience() {
                 Career timeline
               </p>
               <p className="mt-1.5 text-xs leading-snug text-muted">
-                How the last four years unfolded.
+                How the last five years unfolded.
               </p>
             </div>
 
@@ -502,6 +532,7 @@ export function Experience() {
                           </div>
                         </div>
 
+                        {role.progression && <ProgressionTrack steps={role.progression} />}
                         <StackRow stack={role.stack} />
                         <p className="text-sm leading-relaxed text-muted">{summary}</p>
 

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePrefersReducedMotion } from "@/hooks/useMediaQuery";
+import { profile } from "@/lib/data";
 
 /**
  * Cinematic Spider-Tech intro loader.
@@ -195,7 +196,7 @@ export function Preloader() {
             animate={{ opacity: [0, 0.7, 0.7, 0], transition: { duration: 3.1, times: [0, 0.2, 0.8, 1] } }}
             className="absolute bottom-16 font-mono text-[11px] uppercase tracking-[0.5em] text-primary/70"
           >
-            Frontend Software Engineer
+            {profile.role}
           </motion.p>
         </motion.div>
       )}

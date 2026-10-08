@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { profile } from "@/lib/data";
 
 export const runtime = "edge";
-export const alt = "Hemant Patil — Frontend Software Engineer";
+export const alt = "Hemant Patil — Senior Frontend Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -52,7 +52,7 @@ export default function OpengraphImage() {
         {/* One interpolated string, not text + expression + text: satori requires
             an explicit `display: flex` on any div with more than one child. */}
         <div style={{ fontSize: 28, color: "#FB923C", marginTop: 32 }}>
-          {`React · TypeScript · ${profile.yearsExperience} years · Enterprise`}
+          {`${profile.techLine} · ${profile.yearsExperience} years`}
         </div>
       </div>
     ),

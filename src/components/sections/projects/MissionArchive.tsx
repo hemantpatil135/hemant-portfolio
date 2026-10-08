@@ -19,6 +19,9 @@ const TECH_ICONS: Record<string, IconName> = {
   "Redux Toolkit": "redux",
   "Redux Saga": "redux",
   "Styled Components": "styled",
+  "Next.js": "next",
+  "Tailwind CSS": "tailwind",
+  Jest: "jest",
 };
 
 const TABS = [
@@ -124,7 +127,9 @@ function MissionPreview({ project }: { project: Project }) {
         </motion.div>
       </div>
       <span className="absolute bottom-3 left-4 font-mono text-[10px] uppercase tracking-[0.16em] text-white/45">
-        Representative view — client UI under NDA
+        {project.personal
+          ? "Personal project — open the live site"
+          : "Representative view — client UI under NDA"}
       </span>
     </div>
   );

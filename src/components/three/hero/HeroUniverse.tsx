@@ -166,10 +166,10 @@ function VSCode() {
 function Analytics() {
   // Real, résumé-derived impact figures — no invented business metrics.
   const stats = [
-    ["Load time", "−40%", "faster"],
-    ["API calls", "−55%", "fewer"],
+    ["Load time", "~40%", "faster"],
+    ["API calls", "~55%", "fewer"],
     ["User roles", "7", "shipped"],
-    ["Delivery", "95%", "on-time"],
+    ["Delivery", "~95%", "on-time"],
   ];
   return (
     <div>

@@ -137,7 +137,7 @@ export function Navbar({ onOpenCommand }: { onOpenCommand: () => void }) {
                 {profile.name}
               </span>
               <span className="whitespace-nowrap text-[11px] font-medium tracking-wide text-accent">
-                Frontend Software Engineer
+                {profile.role}
               </span>
             </span>
           </a>

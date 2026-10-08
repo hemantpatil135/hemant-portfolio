@@ -18,28 +18,24 @@ import {
   PersonStanding,
   CheckCircle2,
   Folder,
-  LayoutDashboard,
   Building2,
   BarChart3,
-  Building,
-  Palette,
   Network,
   Users,
   BookOpen,
-  ShoppingCart,
   Globe,
-  LayoutTemplate,
   CreditCard,
   FolderGit2,
-  Component,
   type LucideIcon,
 } from "lucide-react";
 import {
   orbitTools,
   stackFeatures,
   engineeringStrengths,
+  skillGroups,
 } from "@/lib/data";
 import { Reveal } from "@/components/ui/Reveal";
+import { Badge } from "@/components/ui/Badge";
 import { TechIcon } from "@/components/ui/TechIcon";
 import { useHasWebGL } from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
@@ -47,20 +43,14 @@ import { cn } from "@/lib/utils";
 // Curated map of only the icons referenced by `usedIn` data — importing the
 // full lucide `icons` object pulls the entire set into the bundle.
 const USED_IN_ICONS: Record<string, LucideIcon> = {
-  LayoutDashboard,
   Building2,
   BarChart3,
-  Building,
-  Palette,
   Network,
   Users,
   BookOpen,
-  ShoppingCart,
   Globe,
-  LayoutTemplate,
   CreditCard,
   FolderGit2,
-  Component,
 };
 
 // The orbital system is client-only and lazily loaded so the section's copy
@@ -444,6 +434,27 @@ export function TechStack() {
                 );
               })}
             </div>
+          </div>
+        </Reveal>
+
+        {/* ──────────── Full skill set (grouped as on the resume) ──────────── */}
+        <Reveal>
+          <div className="mt-8 rounded-3xl border border-white/[0.09] bg-white/[0.025] p-6 sm:p-8">
+            <h3 className="mb-6 text-xs font-bold uppercase tracking-[0.22em] text-accent">
+              Full skill set
+            </h3>
+            <dl className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+              {skillGroups.map((g) => (
+                <div key={g.title}>
+                  <dt className="mb-2.5 text-sm font-semibold text-ink">{g.title}</dt>
+                  <dd className="flex flex-wrap gap-1.5">
+                    {g.items.map((s) => (
+                      <Badge key={s}>{s}</Badge>
+                    ))}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </Reveal>
       </div>
