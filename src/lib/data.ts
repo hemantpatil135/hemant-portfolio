@@ -56,7 +56,7 @@ export interface Profile {
 
 export const profile: Profile = {
   name: "Hemant Patil",
-  role: "Senior Frontend Engineer",
+  role: "Software Engineer",
   techLine: "React.js · TypeScript · Next.js",
   tagline:
     "I build scalable, high-performance frontend applications and own them end to end — from architecture and API layer to auth, CI/CD and code review.",
@@ -64,7 +64,7 @@ export const profile: Profile = {
   email: "patilhemantsing@gmail.com",
   phone: "+91 9157094137",
   summary:
-    "Senior Frontend Engineer with about 5 years of experience building large React.js, TypeScript and Next.js applications for clients like American Express, Pearson, Axis Bank and YES Securities. Owns frontend work end to end — folder structure, API layer, authentication, state management, CI/CD and code review — on platforms used by 250,000+ students and 550+ universities.",
+    "Frontend-focused Software Engineer with about 5 years of experience building large React.js, TypeScript and Next.js applications for clients like American Express, Pearson, Axis Bank and YES Securities. Owns frontend work end to end — folder structure, API layer, authentication, state management, CI/CD and code review — on platforms used by 250,000+ students and 550+ universities.",
   yearsExperience: "~5",
   links: {
     linkedin: "https://linkedin.com/in/hemantpatil135",
@@ -93,12 +93,12 @@ export const about = {
   /** Themed hero question for the About section ("mask" = the person behind the work). */
   question: "Who is behind the mask?",
   intro:
-    "Senior Frontend Engineer with about 5 years building large React.js, TypeScript and Next.js applications for enterprise clients.",
+    "Frontend-focused Software Engineer with about 5 years building large React.js, TypeScript and Next.js applications for enterprise clients.",
   /** The "My Story" narrative paragraph. */
   story:
     "I own frontend work from the first folder to production — module structure, a shared API layer, authentication, state management, CI/CD and code review. That work has shipped for American Express, Pearson, Axis Bank, YES Securities and Interstride, on platforms used by 250,000+ students across 550+ universities. Earlier, as a Team Leader, I led 6 developers and mentored juniors.",
   bio: [
-    "I'm a Senior Frontend Engineer based in Pune, India, with about 5 years building React.js, TypeScript and Next.js applications for clients including American Express, Pearson, Axis Bank and YES Securities.",
+    "I'm a frontend-focused Software Engineer based in Pune, India, with about 5 years building React.js, TypeScript and Next.js applications for clients including American Express, Pearson, Axis Bank and YES Securities.",
     "I own frontend work end to end: folder structure, API layer, authentication, state management, CI/CD and code review — with a focus on performance and test coverage.",
     "I was promoted from React.js Developer to Team Leader within 2 years, leading a team of 6 developers and mentoring juniors.",
   ],
@@ -737,7 +737,7 @@ export const experiences: Experience[] = [
   {
     company: "Interstride Pvt. Ltd.",
     role: "Frontend Developer",
-    period: "Jun 2025 – Present",
+    period: "Jun 2025 – Sep 2026",
     project:
       "Interstride Platform — Student, Admin, Employer & Admission Portals",
     stack: ["React.js", "TypeScript", "Redux Toolkit"],
@@ -851,8 +851,7 @@ export const projects: Project[] = [
     metric: "4 portals · 7 roles · 550+ universities",
     logo: "/logos/interstride.svg",
     logoPlate: "light",
-    // Current employer — see the open-ended role in `experiences`.
-    status: "active",
+    status: "completed",
     summary:
       "Shipped 10+ production features across 4 role-based portals — Student, Admin, Employer and Admission — for 7 user roles, on a shared folder structure, API layer and authentication pattern, with REST data and shared state in Redux Toolkit.",
     features: [

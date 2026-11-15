@@ -37,13 +37,14 @@ const siteUrl =
 
 export const siteConfig = {
   name: "Hemant Patil",
-  title: "Hemant Patil — Senior Frontend Engineer | React.js, TypeScript & Next.js",
+  title: "Hemant Patil — Software Engineer | React.js, TypeScript & Next.js",
   description:
-    "Hemant Patil is a Senior Frontend Engineer building enterprise React.js, TypeScript and Next.js applications — frontend architecture, performance and delivery for American Express, Pearson, Axis Bank and YES Securities.",
+    "Hemant Patil is a frontend-focused Software Engineer building enterprise React.js, TypeScript and Next.js applications — frontend architecture, performance and delivery for American Express, Pearson, Axis Bank and YES Securities.",
   url: siteUrl,
   keywords: [
     "Hemant Patil",
-    "Senior Frontend Engineer",
+    "Software Engineer",
+    "Frontend Engineer",
     "React.js",
     "TypeScript",
     "Next.js",

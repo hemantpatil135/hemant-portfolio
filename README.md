@@ -1,6 +1,6 @@
 # Hemant Patil — Portfolio
 
-Personal portfolio of **Hemant Patil**, Senior Frontend Engineer (React.js · TypeScript · Next.js). Built with Next.js 15, React 19, TypeScript, Tailwind CSS, React Three Fiber and Framer Motion, and deployed on Vercel. Every piece of content is sourced from the résumé — nothing is invented.
+Personal portfolio of **Hemant Patil**, Software Engineer (React.js · TypeScript · Next.js). Built with Next.js 15, React 19, TypeScript, Tailwind CSS, React Three Fiber and Framer Motion, and deployed on Vercel. Every piece of content is sourced from the résumé — nothing is invented.
 
 **Live:** [hemantpatil.vercel.app](https://hemantpatil.vercel.app)
 
