@@ -118,7 +118,7 @@ export function About() {
             <Reveal delay={3}>
               <dl className="glass flex flex-col gap-4 rounded-2xl p-5">
                 <div className="flex items-center justify-between gap-4">
-                  <dt className="text-xs uppercase tracking-wider text-muted">Currently at</dt>
+                  <dt className="text-xs uppercase tracking-wider text-muted">Most recently at</dt>
                   <dd className="flex items-center gap-2">
                     <span className="flex h-6 items-center rounded-md bg-white/90 px-1.5">
                       <Image

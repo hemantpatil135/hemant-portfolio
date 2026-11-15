@@ -83,10 +83,10 @@ export function MissionHeader() {
           />
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-muted">
-              Active mission
+              Latest mission
             </p>
             <p className="mt-1.5 font-mono text-xs font-bold text-accent">
-              {projects.find((p) => p.status === "active")?.client ?? "—"}
+              {(projects.find((p) => p.status === "active") ?? projects[0])?.client ?? "—"}
             </p>
           </div>
         </div>
